@@ -1,9 +1,8 @@
 body{
   background-color: green;
-  margin:0
+  margin:0;
+  padding: 0;
 }
-
-/* el margin e pone asi porque el browser trae eso por defecto */
 
 .header{
   background-color: white;
@@ -15,16 +14,53 @@ body{
   justify-content: center
 }
 
-/* etiqueta de linea toma todo el tamano del contenido.
-display: flex -> coge todo lo que este dentro de la etiqueta (hijos directos) */
 .header nav{
-  display: flex;  /* esto es la manera de mostrarla caja que va a soportar el tamano de un contenido*/
-  /* align-content: center; */
+  display: flex;  
   width: 100%;
   justify-content: space-around;
 }
 
+header nav a .link{
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.profile-background{
+  background-image: url("./img/bg.jpg");
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
 
+#presentation{
+    background-color: blue;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: #626262;
+    letter-spacing: 0em;
+    font-weight: 400;
+ }
 
+ 
+.profile{
+  background-color: red;
+}
 
-/* mejor poner colores por hexadecimal, esto se divide en 3 pares donde cada par representa RGB */
+main section{
+  background-color:white;
+}
+
+#name, #email, #message{
+   
+}
+
+.profile-buttons{
+
+}
+
+.profile-buttons a:last-child{
+    background-color: blue;
+}
