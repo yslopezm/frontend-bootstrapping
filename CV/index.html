@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- esta etiqueta sirve para el navegador, no es visible para el usuario
+  esta etiqueta es para que escale bien en celulares content="width=device-width
+  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles.css">
+  <!-- los estilos van arriba para que carguen con el contenido de la pagina -->
+  <title>Yeny</title>
+</head>
+
+<body>
+
+  <!--
+    etiqueta semantica: proposito informativo que nacieron con html5
+    div: etiqueta comodin
+    id: son identificadores para el js
+  -->
+
+  <header class="header">
+  <!-- necesario para accesibilidad, lo pone como seccion.
+    Google tiene un indexador que ve como esta hecha la pagina entonces el buscador de google lo encuentra  -->
+
+    <!--
+      imagenes informativas con HTML
+      imagenes decorativa con CSS
+      etiqueta i: icono
+      etiqueta a: link
+
+    -->
+    <nav>
+      <a href="http://google.com">  <i> </i> About</a>
+      <a href="http://"> <i>  </i> Resume</a>
+    </nav>
+  </header>
+
+    <section>
+      <!-- atributo alt: muestra un letrer en caso de que la imagen no cargue en la pagina web,
+                        otro proposito
+       -->
+      <img src="./img/profile.png" alt="Image profile">
+      <h1 class="title">Yeny Lopez</h1>
+      <h2>RPA deveoper</h2>
+      <!-- ol (lista ordenada) y ul puede tener etiquetas li que son listas.
+
+      Los iconos no estan en las paginas web, estan en otro lugar-->
+      <ul>
+          <li><a href="http://"> <i> </i></a></li>
+          <li><a href="http://"> <i> </i></a></li>
+          <li><a href="http://"> <i> </i></a></li>
+          <li><a href="http://"> <i> </i></a></li>
+      </ul>
+      <footer>
+        <a href="">DOWNLOAD CV  <i></i></a>
+        <a href="">CONTACT ME<i></i></a>
+      </footer>
+    </section>
+
+    <footer></footer>
+
+    <aside>
+      <!-- para contenido que no es parte de la pagina como publicidad -->
+    </aside>
+
+<!-- action del form es la direccion a donde se envia la informacion con el formulario (API)-->
+    <form action="http>//www.google.com/miinformacion">
+
+      <!-- hay varios tipos de input: text,      checkbox,      color,      date
+      el problema es que algunos navegadores no los ponen bien,
+      lo normal es que se use una libreria con formularios bonitos, solo usar text
+
+      id es para uso del front
+      name es para el back
+      fo debe ser igual al id, de manera que si yo le doy click al label me selecciona el input relacionado
+
+      Antes: maneras de enviar info al servidor: con un boton o con un input ipo submit
+      como esto esta dentro del form, el boton va a buscar que haye n el action de la etiqueta form
+      Ahora: se hace con js que manipula los datos
+
+      for del label dice a que label pertence
+
+      -->
+
+      <label for="Name">Name</label>
+      <input type="text" name="namePrincipal" id="Name">
+      <button>Enviar</button>
+    </form>
+
+
+    <script src=""></script>
+
+</body>
+</html>
