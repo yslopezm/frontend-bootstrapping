@@ -1,97 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- esta etiqueta sirve para el navegador, no es visible para el usuario
-  esta etiqueta es para que escale bien en celulares content="width=device-width
-  -->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./styles.css">
-  <!-- los estilos van arriba para que carguen con el contenido de la pagina -->
-  <title>Yeny</title>
+  <title>Yeny Lopez</title>
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
+      crossorigin="anonymous">
 </head>
 
 <body>
 
-  <!--
-    etiqueta semantica: proposito informativo que nacieron con html5
-    div: etiqueta comodin
-    id: son identificadores para el js
-  -->
-
   <header class="header">
-  <!-- necesario para accesibilidad, lo pone como seccion.
-    Google tiene un indexador que ve como esta hecha la pagina entonces el buscador de google lo encuentra  -->
-
-    <!--
-      imagenes informativas con HTML
-      imagenes decorativa con CSS
-      etiqueta i: icono
-      etiqueta a: link
-
-    -->
     <nav>
-      <a href="http://google.com">  <i> </i> About</a>
-      <a href="http://"> <i>  </i> Resume</a>
+      <a href="www.google.com">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#works">Works</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>  
     </nav>
   </header>
 
-    <section>
-      <!-- atributo alt: muestra un letrer en caso de que la imagen no cargue en la pagina web,
-                        otro proposito
-       -->
-      <img src="./img/profile.png" alt="Image profile">
-      <h1 class="title">Yeny Lopez</h1>
-      <h2>RPA deveoper</h2>
-      <!-- ol (lista ordenada) y ul puede tener etiquetas li que son listas.
+ 
+  <main>
 
-      Los iconos no estan en las paginas web, estan en otro lugar-->
-      <ul>
-          <li><a href="http://"> <i> </i></a></li>
-          <li><a href="http://"> <i> </i></a></li>
-          <li><a href="http://"> <i> </i></a></li>
-          <li><a href="http://"> <i> </i></a></li>
-      </ul>
-      <footer>
-        <a href="">DOWNLOAD CV  <i></i></a>
-        <a href="">CONTACT ME<i></i></a>
-      </footer>
+      <section id=presentation>
+        <div></div>
+        
+        <div>
+          <img src="./img/profile.png" alt="Image profile">
+          <h1 class="title">Yeny Lopez</h1>
+          <h2>RPA developer</h2>
+          <ul>
+              <li><a href="http://www.dribbble.com">dribbble<i> </i></a></li>
+              <li><a href="http://www.twitter.com">twitter<i> </i></a></li>
+              <li><a href="http://www.github.com">github<i> </i></a></li>
+              <li><a href="http://www.spotify.com">spotify<i> </i></a></li>
+              <li><a href="http://www.stackoverflow.com">stackoverflow<i> </i></a></li>
+          </ul>
+          <footer>
+            <a href="">DOWNLOAD CV  <i></i></a>
+            <a href="">CONTACT ME<i></i></a>
+          </footer>
+        </div>
+        <div>
+            <a href="/myCV.txt" download>DOWNLOAD CV</a>
+            <a href="#contact">CONTACT ME</a>
+        </div>
+
+      </section>
+
+    <section id="about">
+        <article class="about">
+            <h3>About Me</h3>
+            <p>I am Ryan Adlard, web designer from USA, California. I have rich experience in web site design and
+                building and customization, also I am good at wordpress. I love to talk with you about our unique.</p>
+            <div>
+                <span>AGE</span>....24
+            </div>
+            <div>
+                <span>RESIDENCE</span>....USA
+            </div>
+            <div>
+                <span>FREELANCE</span>....Available
+            </div>
+            <div>
+                <span>ADDRESS</span>....California, USA
+            </div>
+        </article>  
+        <section class="services">
+            <h3>My Services</h3>
+            <article>
+                <div>icon</div>
+                <h4>WEB DEVELOPMENT</h4>
+                <p>Modern and mobile-ready website that will help you reach all of your marketing.</p>
+            </article>
+            <article>
+                <div>icon</div>
+                <h4>MUSIC WRITING</h4>
+                <p>Music copying, transcription, arranging and composition services.</p>
+            </article>
+            <article>
+                <div>icon</div>
+                <h4>ADVETISING</h4>
+                <p>Advertising services include television, radio, print, mail and web.</p>
+            </article>
+            <article>
+                <div>icon</div>
+                <h4>GAME DEVELOPMENT</h4>
+                <p>Developing memorable and unique mobile android, ios games.</p>
+            </article>
+        </section>  
+        <section class="pricing">
+            <h3>Pricing</h3>
+            <section>
+                <div>low</div>
+                <div>BASIC</div>
+                <div><span>$</span><span>22</span><span>hour</span></div>
+                <div>Web Development</div>
+                <div>Advertising</div>
+                <div>Game Development</div>
+                <div>Music Writing</div>
+                <div>Photography</div>
+                <a href="">BUY BASIC <span>low</span></a>
+            </section>
+            <section>
+                <div>high</div>
+                <div>PRO</div>
+                <div><span>$</span><span>48</span><span>hour</span></div>
+                <div>Web Development</div>
+                <div>Advertising</div>
+                <div>Game Development</div>
+                <div>Music Writing</div>
+                <div>Photography</div>
+                <a href="">BUY PRO <span>high</span></a>
+            </section>
+        </section>
+        <section class="fun">
+            <h3>Fun Fact</h3>
+            <div>
+                <div>disk</div>
+                <div>80 ALBUMES LISTENED</div>
+            </div>
+            <div>
+                <div>trofy</div>
+                <div>15 AWARDS WON</div>
+            </div>
+            <div>
+                <div>coffe</div>
+                <div>1000 CUPS OF COFFEE</div>
+            </div>
+            <div>
+                <div>country</div>
+                <div>10 COUNTRIES VISITED</div>
+            </div>
+        </section>
+        <section class="clients">
+            <h3>Clients</h3>
+            <img src="./img/client_1.png" alt="coffee">
+            <img src="./img/client_2.png" alt="coffee">
+            <img src="./img/client_3.png" alt="coffee">
+            <img src="./img/client_4.png" alt="coffee">
+        </section>
     </section>
 
-    <footer></footer>
+    <section id="resume">
+        <h3>Resume</h3>
 
-    <aside>
-      <!-- para contenido que no es parte de la pagina como publicidad -->
-    </aside>
+        <section>
+            <h4>Experience</h4>
+            <article>
+                <div>2013 - PRESENT</div>
+                <h5>ART DIRECTOR</h5>
+                <h6>FACEBOOK INC.</h6>
+                <p>Collaborate with creative and development teams on the execution of ideas.</p>
+            </article>
+            <article>
+                <div>2011 - 2012</div>
+                <h5>FRONT-END DEVELOPER</h5>
+                <h6>GOOGLE INC.</h6>
+                <p>Monitored technical aspects of the front-end delivery for several projects.</p>
+            </article>
+            <article>
+                <div>2009 - 2010</div>
+                <h5>SENIOR DEVELOPER</h5>
+                <h6>ABC INC.</h6>
+                <p>Optimize website performance using latest technology.</p>
+            </article>
+        </section>
 
-<!-- action del form es la direccion a donde se envia la informacion con el formulario (API)-->
-    <form action="http>//www.google.com/miinformacion">
+        <section>
+            <h4>Education</h4>
+            <article>
+                <div>2006 - 2008</div>
+                <h5>ART DIRECTOR</h5>
+                <h6>NEW YORK</h6>
+                <p>Bachelor's Degree in Computer Science ABC Technical Institute, Jefferson, Missouri</p>
+            </article>
+            <article>
+                <div>2005 - 2006</div>
+                <h5>PROGRAMMING COURSE</h5>
+                <h6>PARIS</h6>
+                <p>Coursework - Git, WordPress, Javascript, iOS, Android.</p>
+            </article>
+            <article>
+                <div>2004 - 2005</div>
+                <h5>WEB DESIGN COURSE</h5>
+                <h6>LONDON</h6>
+                <p>Converted Photoshop layouts to web pages using HTML, CSS, and JavaScript.</p>
+            </article>
+        </section>
 
-      <!-- hay varios tipos de input: text,      checkbox,      color,      date
-      el problema es que algunos navegadores no los ponen bien,
-      lo normal es que se use una libreria con formularios bonitos, solo usar text
+        <section class="skills">
+            <h3>My Skills</h3>
+            <section>
+                <h4>DESIGN</h4>
+                <div>
+                    <div>Web Design</div>
+                    <div>.....</div>
+                </div>
+                <div>
+                    <div>Write Music</div>
+                    <div>........</div>
+                </div>
+                <div>
+                    <div>Photoshop</div>
+                    <div>.......</div>
+                </div>
+                <div>
+                    <div>Graphic Design</div>
+                    <div>........</div>
+                </div>
+            </section>
 
-      id es para uso del front
-      name es para el back
-      fo debe ser igual al id, de manera que si yo le doy click al label me selecciona el input relacionado
+            <section>
+                <h4>CODING</h4>
+                <div>
+                    <div>WordPress</div>
+                    <div>.....</div>
+                </div>
+                <div>
+                    <div>PHP/MYSQL</div>
+                    <div>........</div>
+                </div>
+                <div>
+                    <div>Angular/JavaScript</div>
+                    <div>.......</div>
+                </div>
+                <div>
+                    <div>HTML/CSS</div>
+                    <div>........</div>
+                </div>
+            </section>
 
-      Antes: maneras de enviar info al servidor: con un boton o con un input ipo submit
-      como esto esta dentro del form, el boton va a buscar que haye n el action de la etiqueta form
-      Ahora: se hace con js que manipula los datos
+    </section>
 
-      for del label dice a que label pertence
+    <section id="interest">
+        <h3>Recent Works</h3>
+        <nav>
+            <ul>
+                <li>All</li>
+                <li>RPA</li>
+                <li>Development</li>
+                <li>Management</li>
+            </ul>
+        </nav>
+        <div>
+            <img src="./img/work1.jpg" alt="MOTORCYCLE HELMET">
+            <h4>MOTORCYCLE HELMET</h4>
+            <h5>PHOTO</h5>
+        </div>
+        <div>
+            <img src="./img/work4.jpg" alt="MOBILE APPLICATION">
+            <h4>MOBILE APPLICATION</h4>
+            <h5>DESIGN</h5>
+        </div>
+        <div>
+            <img src="./img/work8.jpg" alt="DAYLIGHT ENTRANCE">
+            <h4>DAYLIGHT ENTRANCE</h4>
+            <h5>MUSIC</h5>
+        </div>
+        <div>
+            <img src="./img/work7.jpg" alt="SOCIAL WEBSITE">
+            <h4>SOCIAL WEBSITE</h4>
+            <h5>DESIGN</h5>
+        </div>
+        <div>
+            <img src="./img/work2.jpg" alt="MINIMALISM SHAPES">
+            <h4>MINIMALISM SHAPES</h4>
+            <h5>VIDEO</h5>
+        </div>
+        <div>
+            <img src="./img/work3.jpg" alt="STAIRCASE">
+            <h4>STAIRCASE</h4>
+            <h5>MUSIC</h5>
+        </div>
+        <div>
+            <img src="./img/work5.jpg" alt="GEREAL TRAVELS">
+            <h4>GEREAL TRAVELS</h4>
+            <h5>PHOTO</h5>
+        </div>
+        <div>
+            <img src="./img/work6.jpg" alt="ARCHITECTURE">
+            <h4>ARCHITECTURE</h4>
+            <h5>VIDEO</h5>
+        </div>
+    </section>
 
-      -->
-
-      <label for="Name">Name</label>
-      <input type="text" name="namePrincipal" id="Name">
-      <button>Enviar</button>
-    </form>
 
 
-    <script src=""></script>
+    <section id="contact">
+        <section class="information">
+            <h3>Get in Touch</h3>
+            <div>
+                <span>ADDRESS</span>....California, USA
+            </div>
+            <div>
+                <span>EMAIL</span>....adlard@example.com
+            </div>
+            <div>
+                <span>PHONE</span>....+123 654 78900
+            </div>
+            <div>
+                <span>FREELANCE</span>....Available
+            </div>
+        </section>
+        <section class="contact">
+            <h3>Contact Form</h3>
+            <form action="http>//www.google.com/miinformacion" method="post">
+                <label for="name">nombre</label>
+                <input type="text" placeholder="Full Name" id="name" name="name" required>
+                <label for="email"></label>
+                <input type="email" placeholder="Full Name" id="email" name="email" required>
+                <label for="message"></label>
+                <div><textarea name="message" id="message" cols="30" rows="10" required></textarea></div>
+                <button>SEND MESSAGE</button>
+            </form>
+        </section>
+    </section>
 
+
+
+  </main> 
+
+  <script src="script.js" type="application/javascript"></script>
 </body>
 </html>
