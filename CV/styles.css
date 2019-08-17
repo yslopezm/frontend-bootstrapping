@@ -1,23 +1,55 @@
 body{
-  background-color: green;
-  margin:0;
+  background: linear-gradient(to bottom right, #50a3a2 0%, #2eca7f 100%);
   padding: 0;
+  margin: 0;
+  border: none;
+  font-family: 'Poppins';
+  font-size: 14px;
+  color: #626262;
+  letter-spacing: 0em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 .header{
   background-color: white;
-  height: 72px;
-  width: 300px;
-  display: flex;
-  align-items: center;
-  margin:0 auto;
-  justify-content: center
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  left: calc(50% - 270px);
+  z-index: 100;
 }
 
-.header nav{
-  display: flex;  
+header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  justify-content: space-around;
+}
+
+header nav a {
+  width: 100%;
+  height: 72px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: color 0.3s ease 0s;
+  font-size: 20px;
+}
+
+header nav a::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background: radial-gradient(ellipse at top, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 header nav a .link{
@@ -25,6 +57,11 @@ header nav a .link{
   font-weight: 500;
   text-transform: uppercase;
   margin-top: 4px;
+
+}
+
+header nav a:hover {
+  color: #2eca7f;
 }
 
 .background.gradient {
@@ -38,16 +75,6 @@ header nav a .link{
   height: 100%;
 }
 
-.background.gradient {
-  background: #50a3a2;
-  background: linear-gradient(to bottom right, #50a3a2 0%, #2eca7f 100%);
-  position: fixed;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 
 .bg-bubbles {
   position: absolute;
@@ -455,7 +482,64 @@ a{
   color: #2eca7f;
 }
 
+/* interest styles */
 
+
+.interest-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interest-header ul{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  padding-bottom: 17px;
+}
+
+
+
+.interest-header ul li{
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.interest-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.interest-content > div{
+  width: 50%;
+}
+
+.interest-content > div > div{
+  padding:18px;
+}
+
+.interest-content > div > div h4{
+  padding: 0 0 2px 0;
+  display: block;
+  font-size: 13px;
+  color: #171717;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 126px;
+  margin: 0 auto;
+}
+
+.interest-content > div > div h5{
+  margin: 0;
+  font-size: 11px;
+  color: #999999;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.interest-content img{
+  width: 100%;
+}
 
 /* other styles */
 
@@ -608,10 +692,6 @@ main .profile, main .about, main .resume, main .interest, main .contact{
   margin: 0 auto;
 }
 
-header nav a:hover {
-  color: #2eca7f;
-}
-
 main{
   margin-top: 88px;
 }
@@ -639,6 +719,7 @@ main{
   height: 1px;
   background: radial-gradient(ellipse at left, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
 }
+
 
 .interest-header ul li{
   margin: 0 5px;
@@ -687,6 +768,12 @@ main .contact{
   margin-bottom: 40px;
 }
 
+.contact-information{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 11px 18px;
+}
+
 .contact-information > div{
   width: 50%;
   text-align: left;
@@ -730,4 +817,33 @@ main .contact{
 
 .contact-form .double-line input{
   width: 100%;
+}
+
+/* accomplishment styles */
+
+.accomplishment{
+  margin-top: 50px;
+}
+
+.accomplishment > div{
+  display: flex;
+  justify-content: space-around;
+}
+
+.accomplishment > div > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 148px;
+  width: 25%;
+  padding: 0 16px;
+}
+
+.accomplishment .fas{
+  margin: 0 auto;
+  width: 60px;
+  height: 43px;
+  text-align: center;
+  font-size: 26px;
+  color: #2eca7f;
 }
