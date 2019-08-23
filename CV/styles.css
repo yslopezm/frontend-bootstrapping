@@ -184,7 +184,8 @@ a{
   height: 300px;
   background-size: cover;
   background-position: center center;
-  position: relative;
+  position: relative;   
+  z-index: -2;
 }
 
 
@@ -262,11 +263,22 @@ a{
   color: #2eca7f;
 }
 
+/* .profile1{
+  background: #ffffff;
+} */
+
+.profile-back{ 
+  background: #ffffff;
+}
+
+/* .profile-back div . */
+
 .profile-buttons{
   position: relative;
   display: flex;
-  margin-top: 58px;
+  margin-top: 58px; 
 }
+
 .profile-buttons::before{
   content: '';
   position: absolute;
@@ -289,6 +301,7 @@ a{
   font-size: 12px;
   font-weight: 500;
   color: #171717;
+  background: #ffffff;
 }
 
 .profile-buttons a:hover{
@@ -310,14 +323,11 @@ a{
   font-size: 15px;
 }
 
-
 .about-aboutMe > div{
   padding: 5px 17px;
   position: relative;
 
 }
-
-
 
 .about-aboutMe > div > div{
   display: flex;
@@ -553,26 +563,11 @@ a{
     font-weight: 400;
  }
 
- 
-.profile{
-  background-color: red;
-}
-
-main section{
-  background-color:white;
-}
 
 #name, #email, #message{
    
 }
 
-.profile-buttons{
-
-}
-
-.profile-buttons a:last-child{
-    background-color: blue;
-}
 
 .profile{
   box-sizing: border-box;
@@ -655,7 +650,6 @@ input:focus, textarea:focus, button:focus {
   background: radial-gradient(ellipse at top, rgba(197, 202, 213, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
-/* borrar porque hace referencia a servicios */
 .line-down{
   position: relative;
 }
