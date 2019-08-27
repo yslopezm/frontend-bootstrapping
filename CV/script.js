@@ -1,7 +1,7 @@
 
 data = {
     id:5,
-    name:"juan"
+    name:"yeny"
 }
 
 fetch("https://randomuser.me/api/",{

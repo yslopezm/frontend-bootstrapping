@@ -167,6 +167,9 @@ header nav a:hover {
   0% {
       transform: translateY(0);
   }
+  50%{
+
+  }
   100% {
       transform: translateY(-1500px) rotate(600deg);
   }
@@ -493,8 +496,6 @@ a{
 }
 
 /* interest styles */
-
-
 .interest-header{
   display: flex;
   justify-content: space-between;
@@ -507,8 +508,6 @@ a{
   padding: 0;
   padding-bottom: 17px;
 }
-
-
 
 .interest-header ul li{
   margin: 0 5px;
@@ -665,10 +664,10 @@ input:focus, textarea:focus, button:focus {
 }
 
 
-main .about, main .resume, main .interest, main .contact{
+/* main .about, main .resume, main .interest, main .contact{
   padding: 30px 20px 30px 20px;
   margin-top: 15px;
-}
+} */
 
 main .profile{
   margin-top: 18px;
@@ -841,4 +840,6 @@ main .contact{
   font-size: 26px;
   color: #2eca7f;
 }
+
+
 
