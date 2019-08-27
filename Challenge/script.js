@@ -1,85 +1,99 @@
-var photos=document.querySelector('.Contenedor')
-var navegador=document.querySelector('#Usuarios')
-let resultados;
 
-const arrayDatos = fetch('https://randomuser.me/api/?results=13').then(res => res.json())
-arrayDatos.then((user) => {
-    crearfoto(user)
-})
-
-
+ 
+/**
+ * Definition of the variables 
+ */
+let photos = document.querySelector('.container')
+let browser = document.querySelector('#users')
 const offset = 10000;
-$(window).scroll(function(user) {
-    if($(window).scrollTop() + $(window).height() == $(document).height()) {
-  
-  
-}       
-    fetch('https://randomuser.me/api?results=13')
-    .then(function(res){
-            return res.json()
-     })
-    .then(function(user) {
-    crearfoto(user);
-    })       
-
-});
+const API = 'https://randomuser.me/api/?results=13';
+let results;
 
 
-    function crearfoto(user){
-        resultados=user.results;
+/**
+ * Query
+ */
+function queryAPI () {
+    fetch(API).then((value) =>{   
+        console.log(value)
+        return value.json();
+    }).then((value) => {
+        console.log(value)
+        createPhoto(value)
+    })
+}
 
-        for (var index = 0; index < 13; index++) {  
-            
-            var miObjeto=user.results[index]                  
-            localStorage.setItem('datos', JSON.stringify(miObjeto));
-            var guardado = localStorage.getItem('datos');                
-            var article1= document.createElement('article')
-                            
-            var nameImg=document.createElement('div')
-            var imagen= document.createElement('img')
+/**
+ * @param {Input with the users array with all data} user
+ */
+function createPhoto(user) {
+    results = user.results;
+    
+    for (let index = 0; index < 13; index++) {
+        console.log(user.results[index])        
+        localStorage.setItem('datos', JSON.stringify(user.results[index]));
+        let saved = localStorage.getItem('datos');
+        let article1 = document.createElement('article')
 
-            var clickImage=document.createElement('a')
+        let nameImg = document.createElement('div')
+        let imagen = document.createElement('img')
 
-            article1.appendChild(imagen)
-            article1.appendChild(nameImg)
+        let clickImage = document.createElement('a')
 
-            nameImg.innerHTML= user.results[index].name.first
-            
+        article1.appendChild(imagen)
+        article1.appendChild(nameImg)
 
-            imagen.src=user.results[index].picture.large
-            imagen.alt=user.results[index].name.first
-            imagen.className=user.results[index].name.first
-            clickImage.href=user.results[index].picture.large
-            clickImage.id=user.results[index].name.first
+        nameImg.innerHTML = user.results[index].name.first
 
-            var location=user.results[index].location.street 
-            var city=user.results[index].location.city 
-            var phone=user.results[index].phone
+        // Image properties
+        imagen.src = user.results[index].picture.large
+        imagen.alt = user.results[index].name.first
+        imagen.className = user.results[index].name.first
+        clickImage.href = user.results[index].picture.large
+        clickImage.id = user.results[index].name.first
 
-            imagen.id=index;
-            
-            navegador.appendChild(clickImage)
-            
-            photos.appendChild(article1)
-            
+        let location = user.results[index].location.street
+        let city = user.results[index].location.city
+        let phone = user.results[index].phone
 
-        }   
-            
+        imagen.id = index;
+
+        browser.appendChild(clickImage)
+
+        photos.appendChild(article1)
+
     }
 
-
-
-
-var theParent = document.querySelector('.Contenedor');
-theParent.addEventListener('click',doSomething,false);
-function doSomething (e){
-    
-    if (e.target !== e.currentTarget){
-    
-        alert('Hello');
-        var data = e.target.getAttribute('id'),
-        url = data;          
-    //    history.pushState(resultados[data],'detail','personaje.html');
-
-    }  e.stopPropagation();   
 }
+
+
+let theParent = document.querySelector('.container');
+theParent.addEventListener('click', doSomething, false);
+function doSomething(e) {
+
+    if (e.target !== e.currentTarget) {
+
+        alert('Hello');
+        let data = e.target.getAttribute('id'),
+            url = data;
+           history.pushState(results[data],'detail','personaje.html');
+
+    } e.stopPropagation();
+}
+
+/**
+ * Initialize the view 
+ */
+queryAPI()
+
+
+/**
+ * Infinitive scroll
+ */
+$(window).scroll(function (user) {
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+    }
+        queryAPI()
+
+});     
