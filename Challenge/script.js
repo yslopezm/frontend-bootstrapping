@@ -3,9 +3,9 @@
  */
 let photos = document.querySelector('#photos')
 let browser = document.querySelector('#users')
-const offset = 10000;
+// let imagen = document.createElement('img')
+// const offset = 10000;
 const API = 'https://randomuser.me/api/?results=100';
-let results;
 let lengthUsers;
 
 /**
@@ -14,16 +14,17 @@ let lengthUsers;
 function queryAPI () {
     fetch(API).then((value) =>{
         return value.json();
-    }).then((value) => {
-        let results = value.results;
-        lengthUsers = results.length;
+    }).then((value) => {         
+        lengthUsers = value.results.length;
         createPhoto(value);
+        return value.results;
     })
 }
 
 /**
  * @param {Input with the users array with all data} user
  */
+
 function createPhoto(user) {   
 
     for (let index = 0; index < lengthUsers; index++) {
@@ -60,30 +61,30 @@ function createPhoto(user) {
 
 }
 
-
-
+// addEventListener
 photos.addEventListener('click', selectImage, false);
-function selectImage(e) {
-    if (e.target !== e.currentTarget) {
-        alert('Hello');
-        // let data = e.target.getAttribute('id'),
-        //     url = data;
-        //     history.pushState(results[data],'detail','character.html');
-        // console.log(data);
-        } e.stopPropagation();
+
+async function selectImage(event) {
+    //Certified that the click was performed on the image
+    if (event.target !== event.currentTarget) { 
+        console.log(event.target)
+        // window.location.href= "./character.html"
+        //Get the data of the target photo
+        let index = event.target.getAttribute('id');
+        history.pushState(results[index],'detail','character.html');
+    } event.stopPropagation();
 }
 
 /**
  * Initialize the view 
  */
-queryAPI()
+let results =queryAPI()
 
 
 /**
  * Infinitive scroll
  */
-$(window).scroll(function (user) {
-    if ($(window).scrollTop() + $(window).height() == $(document).height()) { }
-    queryAPI()
-
-});     
+// $(window).scroll(function (user) {
+//     if ($(window).scrollTop() + $(window).height() == $(document).height()) { }
+//     queryAPI()
+// });     
