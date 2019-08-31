@@ -4,7 +4,7 @@
 let photos = document.querySelector('#photos')
 let people = document.querySelector('#people')
 let person = document.querySelector('#person')
-let browser = document.querySelector('#navOptions')
+let header = document.querySelector('#navOptions')
 let returnButton = document.querySelector('#returnButton')
 const API = 'https://randomuser.me/api/?results=100';
 let lengthUsers;
@@ -69,7 +69,7 @@ function createPhoto(data) {
         article.appendChild(imagen)
         article.appendChild(nameImg)        
         photos.appendChild(article)
-        browser.appendChild(clickImage)
+        header.appendChild(clickImage)
     }
 
 }
@@ -101,9 +101,9 @@ function selectImage(event) {
         console.log(results[index])
         imgSelected.src = results[index].picture.large
 
-        name.innerHTML = results[index].name.first
-        email.innerHTML = results[index].email
-        gender.innerHTML = results[index].gender        
+        name.innerHTML = `Name: ${results[index].name.first}` 
+        email.innerHTML = `Email: ${results[index].email}`
+        gender.innerHTML = `Gender: ${results[index].gender}`         
     } event.stopPropagation();
 }
 
