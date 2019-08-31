@@ -2,34 +2,48 @@
  * Definition of the variables 
  */
 let photos = document.querySelector('#photos')
+let people = document.querySelector('#people')
+let person = document.querySelector('#person')
 let browser = document.querySelector('#users')
 // let imagen = document.createElement('img')
 // const offset = 10000;
 const API = 'https://randomuser.me/api/?results=100';
 let lengthUsers;
+let results
 
 /**
  * Query
  */
-function queryAPI () {
-    fetch(API).then((value) =>{
+async function queryAPI () {
+    await fetch(API).then((value) =>{
         return value.json();
     }).then((value) => {         
         lengthUsers = value.results.length;
-        createPhoto(value);
-        return value.results;
+        createPhoto(value.results);
+        console.log(value)
+        results = value.results;      
+    }).catch(err => {
+        console.log(err)
     })
+    // .resolve('foo').then(() => {return Promise.resolve('bar')})
+    
 }
+
+/**
+ * Initialize the view 
+ */
+ 
+queryAPI()
+
 
 /**
  * @param {Input with the users array with all data} user
  */
-
-function createPhoto(user) {   
+function createPhoto(data) {   
 
     for (let index = 0; index < lengthUsers; index++) {
 
-        localStorage.setItem('datos', JSON.stringify(user.results[index]));
+        localStorage.setItem('datos', JSON.stringify(data[index]));
         
         // new DOM elements 
         let saved = localStorage.getItem('datos');
@@ -39,17 +53,17 @@ function createPhoto(user) {
         let clickImage = document.createElement('a')
 
         // Data extraction
-        let location = user.results[index].location.street
-        let city = user.results[index].location.city
-        let phone = user.results[index].phone
+        let location = data[index].location.street
+        let city = data[index].location.city
+        let phone = data[index].phone
 
         // Image properties 
-        nameImg.innerHTML = user.results[index].name.first       
-        imagen.src = user.results[index].picture.large
-        imagen.alt = user.results[index].name.first
-        imagen.className = user.results[index].name.first
-        clickImage.href = user.results[index].picture.large
-        clickImage.id = user.results[index].name.first
+        nameImg.innerHTML = data[index].name.first       
+        imagen.src = data[index].picture.large
+        imagen.alt = data[index].name.first
+        imagen.className = data[index].name.first
+        clickImage.href = data[index].picture.large
+        clickImage.id = data[index].name.first
 
         // DOM structure
         imagen.id = index;
@@ -61,24 +75,41 @@ function createPhoto(user) {
 
 }
 
-// addEventListener
+
+
+/**
+ * addEventListener
+ */
 photos.addEventListener('click', selectImage, false);
 
-async function selectImage(event) {
+function selectImage(event) {
+   
     //Certified that the click was performed on the image
     if (event.target !== event.currentTarget) { 
         console.log(event.target)
-        // window.location.href= "./character.html"
+        people.style.display= "none";
+        person.style.display= "block";
+
+        let imgSelected = document.querySelector('#imgSelected')
+        // let infoSelected = document.querySelector('#infoSelected')
+        let name = document.querySelector('#name')
+        let email = document.querySelector('#email')
+        let gender = document.querySelector('#gender')
+        
         //Get the data of the target photo
         let index = event.target.getAttribute('id');
-        history.pushState(results[index],'detail','character.html');
+        console.log(results[index])
+        imgSelected.src = results[index].picture.large
+
+        name.innerHTML = results[index].name.first
+        email.innerHTML = results[index].email
+        gender.innerHTML = results[index].gender
+        // history.pushState(results[index],'detail','character.html');
     } event.stopPropagation();
 }
 
-/**
- * Initialize the view 
- */
-let results =queryAPI()
+
+
 
 
 /**

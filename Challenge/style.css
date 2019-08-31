@@ -1,7 +1,7 @@
 .Users{}
 
 .photos{
-    background: green;  
+    /* background: green;   */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -13,8 +13,10 @@
     flex-grow: 1;
     height: 100%; */
 }
-
-.row {
+.person{
+  display: none
+}
+/* .row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -26,4 +28,4 @@ display: flex;
 flex-direction: column;
 flex-basis: 100%;
 flex: 1;
-}
+} */
