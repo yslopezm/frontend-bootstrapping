@@ -5,6 +5,8 @@ let photos = document.querySelector('#photos')
 let people = document.querySelector('#people')
 let person = document.querySelector('#person')
 let browser = document.querySelector('#users')
+let returnButton = document.querySelector('#returnButton')
+
 // let imagen = document.createElement('img')
 // const offset = 10000;
 const API = 'https://randomuser.me/api/?results=100';
@@ -78,20 +80,20 @@ function createPhoto(data) {
 
 
 /**
- * addEventListener
+ * EventListener
  */
 photos.addEventListener('click', selectImage, false);
+returnButton.addEventListener('click',redirectHome, false )
 
-function selectImage(event) {
-   
+
+function selectImage(event) {   
     //Certified that the click was performed on the image
     if (event.target !== event.currentTarget) { 
         console.log(event.target)
         people.style.display= "none";
         person.style.display= "block";
 
-        let imgSelected = document.querySelector('#imgSelected')
-        // let infoSelected = document.querySelector('#infoSelected')
+        let imgSelected = document.querySelector('#imgSelected')        
         let name = document.querySelector('#name')
         let email = document.querySelector('#email')
         let gender = document.querySelector('#gender')
@@ -108,6 +110,12 @@ function selectImage(event) {
     } event.stopPropagation();
 }
 
+
+function redirectHome(event){
+    people.style.display= "block";
+    person.style.display= "none";
+
+}
 
 
 
