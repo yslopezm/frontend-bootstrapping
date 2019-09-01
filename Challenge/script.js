@@ -65,7 +65,8 @@ function createPhoto(data) {
         clickImage.id = data[index].name.first
 
         // DOM structure
-        imagen.id = index;
+        imagen.id = data[index].email;
+        // index;
         article.appendChild(imagen)
         article.appendChild(nameImg)        
         photos.appendChild(article)
@@ -88,6 +89,7 @@ function selectImage(event) {
     //Certified that the click was performed on the image
     if (event.target !== event.currentTarget) { 
         console.log(event.target)
+
         people.style.display= "none";
         person.style.display= "block";
 
@@ -98,7 +100,31 @@ function selectImage(event) {
         
         //Get the data of the target photo
         let index = event.target.getAttribute('id');
-        console.log(results[index])
+        console.log(typeof(results))
+        // console.log(results.keys)
+        let arrayResults = Object.keys(results)
+        console.log(arrayResults)
+        
+        var filtered = arrayResults.filter(person => {
+            console.log(arrayResults.email)
+            return arrayResults.email
+        })
+
+        // var filtered = [];
+        // arrayResults.each(arrayResults, function(){
+        //     if (this.email == index) {
+        //         filtered.push(this);
+        //     }
+        // });
+        console.log(filtered)
+
+        // console.log(arrayResults.filter(
+
+        //      this.email == index
+
+        //     ))
+        // console.log(index)
+        // console.log(results[index])
         imgSelected.src = results[index].picture.large
 
         name.innerHTML = `Name: ${results[index].name.first}` 
@@ -122,7 +148,8 @@ function redirectHome(event){
 /**
  * Infinitive scroll
  */
-// $(window).scroll(function (user) {
-//     if ($(window).scrollTop() + $(window).height() == $(document).height()) { }
-//     queryAPI()
-// });     
+window.onscroll = function() {    
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {        
+        queryAPI()
+    }
+};  

@@ -1,24 +1,24 @@
 
-data = {
-    id:5,
-    name:"yeny"
-}
+// data = {
+//     id:5,
+//     name:"yeny"
+// }
 
-fetch("https://randomuser.me/api/",{
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
-    headers: {
-        "Content-Type": "application/json",
-        // "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-}).then((value) =>{
-    return value.json();
-}).then((value) => {
-    return value.results[0]
-}).then((value) => {
-    let nombre = document.getElementById("nombre");
-    nombre.innerHTML = value.name.title + " " + value.name.first + " " + value.name.last;
-})
+// fetch("https://randomuser.me/api/",{
+//     method: "POST", // *GET, POST, PUT, DELETE, etc.
+//     headers: {
+//         "Content-Type": "application/json",
+//         // "Content-Type": "application/x-www-form-urlencoded",
+//     },
+//     body: JSON.stringify(data), // body data type must match "Content-Type" header
+// }).then((value) =>{
+//     return value.json();
+// }).then((value) => {
+//     return value.results[0]
+// }).then((value) => {
+//     let nombre = document.getElementById("nombre");
+//     nombre.innerHTML = value.name.title + " " + value.name.first + " " + value.name.last;
+// })
 
 
 
@@ -88,6 +88,27 @@ email.addEventListener("input", function (event) {
   }
 });
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
-  });
+// form.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//   });
+
+
+let imagesContent = document.querySelector("#interest-content")
+let imageModal = document.querySelector("#imageModal")
+let modalClose = document.querySelector("#modalClose")
+
+modalClose.addEventListener('click',closeImage)
+imagesContent.addEventListener('click',selectImage )
+
+function selectImage(event){
+    if (event.target.localName === "img") {
+        let imagePath = event.target.currentSrc
+        imagePath = `.${imagePath.substring(imagePath.indexOf("/img/"))}`
+        imageModal.src = imagePath
+        modal.classList.add("modalOn")              
+    }     
+}
+
+function closeImage(){
+    modal.classList.remove("modalOn")
+}

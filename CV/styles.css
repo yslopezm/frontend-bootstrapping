@@ -841,6 +841,36 @@ main .contact{
   color: #2eca7f;
 }
 
+.modal{
+  position: fixed;
+  display: none;
+  top:0;
+  left: 0;
+  bottom:0;
+  right: 0;
+  z-index: 5;
+  width: 400px;
+  height: 300px;
+  margin: auto auto;
+  background: white;
+  border: 1px solid black
+}
+
+.modalOn{
+  display: block;
+}
+
+.modalContent{
+  height: auto;
+}
+
+.modalClose{
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
 @media only screen and (min-width: 540px){
   header{
       left: calc(50% - 270px);
