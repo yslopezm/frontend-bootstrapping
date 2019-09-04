@@ -7,15 +7,14 @@ let person = document.querySelector('#person')
 let header = document.querySelector('#navOptions')
 let returnButton = document.querySelector('#returnButton')
 const API = 'https://randomuser.me/api/?results=50';
-
 let results={};
 let countApiCall=0;
-let val=0;
-/**
- * Query
- */
-var promise1 = Promise.resolve();
 
+
+/**
+ * API call 
+ * 
+ */
 function queryAPI () {
     fetch(API).then((value) =>{        
         return value.json();
@@ -61,10 +60,10 @@ function prepData(data, numCall= 0) {
 function createPhoto(data, numCall= 0) {   
 
     for (let index = numCall*50-50; index < Object.keys(data).length + numCall*50-50; index++) {        
-        localStorage.setItem('datos', JSON.stringify(data[index]));
-        // console.log(data[index])
+        // localStorage.setItem('datos', JSON.stringify(data[index]));
+       
         // new DOM elements 
-        let saved = localStorage.getItem('datos');
+        // let saved = localStorage.getItem('datos');
         let article = document.createElement('article')
         let nameImg = document.createElement('div')
         let imagen = document.createElement('img')
@@ -95,12 +94,14 @@ function createPhoto(data, numCall= 0) {
 
 
 /**
- * EventListener
+ * Add the EventListener for the events that are going to be detected
  */
 photos.addEventListener('click', selectImage, false);
 returnButton.addEventListener('click',redirectHome, false )
 
 /**
+ * Event to display an specific person
+ * 
  * @param {event to shows the specific data of an user} event
  */
 function selectImage(event) {   
@@ -126,6 +127,8 @@ function selectImage(event) {
 
 
 /**
+ * Event to change the display view
+ * 
  * @param {event to redirect to home view} event
  */
 function redirectHome(event){
@@ -136,6 +139,7 @@ function redirectHome(event){
 
 /**
  * Infinitive scroll
+ * 
  */
 window.onscroll = function() {    
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {            
