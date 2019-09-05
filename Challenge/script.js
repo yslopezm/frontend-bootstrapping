@@ -60,10 +60,8 @@ function prepData(data, numCall= 0) {
 function createPhoto(data, numCall= 0) {   
 
     for (let index = numCall*50-50; index < Object.keys(data).length + numCall*50-50; index++) {        
-        // localStorage.setItem('datos', JSON.stringify(data[index]));
-       
-        // new DOM elements 
-        // let saved = localStorage.getItem('datos');
+               
+        // new DOM elements         
         let article = document.createElement('article')
         let nameImg = document.createElement('div')
         let imagen = document.createElement('img')
@@ -81,7 +79,7 @@ function createPhoto(data, numCall= 0) {
         imagen.className = data[index].name.first
         clickImage.href = data[index].picture.large
         clickImage.id = data[index].name.first
-
+        
         // DOM structure
         imagen.id = index;
         article.appendChild(imagen)
@@ -114,6 +112,8 @@ function selectImage(event) {
         let name = document.querySelector('#name')
         let email = document.querySelector('#email')
         let gender = document.querySelector('#gender')
+        let phone = document.querySelector('#phone')
+        let cell = document.querySelector('#cell')
         
         //Get the data of the target photo
         let index = event.target.getAttribute('id');        
@@ -121,7 +121,10 @@ function selectImage(event) {
 
         name.innerHTML = `Name: ${results[index].name.first}` 
         email.innerHTML = `Email: ${results[index].email}`
-        gender.innerHTML = `Gender: ${results[index].gender}`         
+        gender.innerHTML = `Gender: ${results[index].gender}`      
+        phone.innerHTML = `Phone: ${results[index].phone}`   
+        cell.innerHTML = `Cell: ${results[index].cell}`   
+
     } event.stopPropagation();
 }
 

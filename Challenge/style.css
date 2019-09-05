@@ -38,15 +38,32 @@ nav li a:hover{
   color: white;
 }
 
-.infoSelected{
-
+.selected{  
+  padding: 20px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;  
+  background-size: cover;    
+  border-radius: 3px;
+  box-shadow: 0px 0 2px 1px #e6e5e9; 
 }
 
-.selected{
-  display: flex;
-  flex-wrap: wrap;
+.titlePerson{  
+  text-align: center;
 }
 
+.person{
+  padding: 15%;  
+  height: 500px;  
+  background-position: center top;
+  
+}
+
+body{
+  background-image: url("./images/fondo.jpg");
+  background-size: auto;
+  background-repeat: repeat-y;
+}
 
 .header{
   background-color: blue;
@@ -56,4 +73,40 @@ nav li a:hover{
   position: fixed;
   top: 0;  
   z-index: 100;
+}
+
+.imgSelected{
+  padding: 20px;
+  background: blue;
+  border-radius: 3px;
+  box-shadow: 0px 0 2px 1px #e6e5e9;
+}
+
+.infoSelected{
+  padding: 30px;
+}
+
+
+.returnButton{
+  padding: 10px;
+  background-color:rgb(204, 153, 255);
+  width: 100%;
+  border: 0px;
+  border-radius: 2px;
+  cursor: pointer;
+  color:black;
+}
+
+.returnButton:hover{
+  background-color:white;
+}
+
+article{
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0px 0 2px 1px #e6e5e9;
+}
+
+.photos{
+  padding: 15px;
 }
