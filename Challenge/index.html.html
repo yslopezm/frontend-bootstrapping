@@ -11,13 +11,12 @@
     <title>Random User</title>
 </head>
 <body>
-    <nav>
-        <div class="navOptions" id="navOptions">
-            <ul>
-                <li><a href="#"><i class="fas fa-user-friends"></i> <span>Home</span></a></li>
-                <li><a href="#">Faqs</a></li>
-            </ul>
-        </div>
+    <nav class="navOptions" id="navOptions">
+        <i class="fas fa-users" id="navIcon"></i> 
+        <ul>
+            <li><a id="navHome" href="#people">Home</a></li>
+            <li><a href="https://frontend-bootstrapping.org/">Learn</a></li>
+        </ul>    
     </nav>
     
     <section class='people' id='people'>
@@ -37,7 +36,7 @@
                 <div id="gender"></div>
             </article>
         </div>
-        <button class="returnButton" id="returnButton">Return</button>
+        <button class="returnButton" id="returnButton"><p>Return</p></button>
    </section>
 
     <script src="script.js" type="application/javascript"></script>

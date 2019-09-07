@@ -1,18 +1,86 @@
-.Users{}
-
+/* Principal view  */
 .photos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 5%;
+    align-content: space-between; 
+      /* flex-flow: row wrap;
+    flex-basis: 100%;
+    height: 0; */
 }
+
+article{
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 0px 0 5px 5px #e6e5e9;
+  padding-bottom:15px;
+  border: 3px solid #AAA8A1; 
+}
+
+article div{
+  font-weight: bold;
+  font-size: 2m;
+  text-align: center;
+} 
+
+.imgRamdomUser:hover{
+  width: 110%;
+}
+
+/* Detailed view */
 .person{
   display: none
 }
 
-nav{
+.selected{  
+  padding: 20px;  
+  display: flex;  
+  flex-wrap: wrap;    
+  border-radius: 3px;
+  box-shadow: 0px 0 5px 5px #e6e5e9;
+  justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.imgSelected{
+  padding: 10px;  
+  border-radius: 3px;
+  border: 3px solid #AAA8A1;  
+}
+
+.infoSelected{
+  padding: 30px;
+}
+
+.returnButton{
+  padding: 10px;
+  background-color:#1D4FDF; 
+  width: auto;
+  border: 0px;
+  border-radius: 3px;
+  cursor: pointer;
+  color:white;
+  position: relative;
+  left: 30px; 
+  top: 15px;
+}
+
+p:hover{
+  font-size: 120%;
+}
+
+
+
+/* navbar  */
+.navOptions{
   display: flex;
-  background-color: blue;   /* #7ACC2D; */
+  background-color: #1D4FDF;  
   padding: 10px;
   color: white;
   justify-content: space-between;
@@ -23,90 +91,41 @@ nav ul{
   display: flex;
 }
 
-
 nav li{
   padding-left: 20px;
   list-style: none;
 }
 
-nav li a{
-  color: black;
+nav ul li{
+  padding-right: 20px;
+  list-style: none;
+}
+
+nav a{
+  color: white;
   text-decoration: none;
 }
 
-nav li a:hover{
-  color: white;
+nav a:hover{
+  font-size: 120%;
 }
 
-.selected{  
-  padding: 20px;
-  background-position: center top;
-  background-repeat: no-repeat;
-  display: flex;  
-  background-size: cover;    
-  border-radius: 3px;
-  box-shadow: 0px 0 2px 1px #e6e5e9; 
+#navIcon{
+width: 200%;
 }
 
-.titlePerson{  
+/* General structure */
+body{
+  font-family: Helvetica;
+  margin:0;
+  padding: 0;
+}
+
+h1{
   text-align: center;
 }
 
-.person{
-  padding: 15%;  
-  height: 500px;  
-  background-position: center top;
-  
+i{
+  width: 20%;
 }
 
-body{
-  background-image: url("./images/fondo.jpg");
-  background-size: auto;
-  background-repeat: repeat-y;
-}
-
-.header{
-  background-color: blue;
-  border-radius: 0 0 5px 5px;
-  width: 100%;
-  max-width: 540px;
-  position: fixed;
-  top: 0;  
-  z-index: 100;
-}
-
-.imgSelected{
-  padding: 20px;
-  background: blue;
-  border-radius: 3px;
-  box-shadow: 0px 0 2px 1px #e6e5e9;
-}
-
-.infoSelected{
-  padding: 30px;
-}
-
-
-.returnButton{
-  padding: 10px;
-  background-color:rgb(204, 153, 255);
-  width: 100%;
-  border: 0px;
-  border-radius: 2px;
-  cursor: pointer;
-  color:black;
-}
-
-.returnButton:hover{
-  background-color:white;
-}
-
-article{
-  padding: 15px;
-  border-radius: 3px;
-  box-shadow: 0px 0 2px 1px #e6e5e9;
-}
-
-.photos{
-  padding: 15px;
-}

@@ -6,6 +6,7 @@ let people = document.querySelector('#people')
 let person = document.querySelector('#person')
 let header = document.querySelector('#navOptions')
 let returnButton = document.querySelector('#returnButton')
+let navHome = document.querySelector("#navHome")
 const API = 'https://randomuser.me/api/?results=50';
 let results={};
 let countApiCall=0;
@@ -76,7 +77,7 @@ function createPhoto(data, numCall= 0) {
         nameImg.innerHTML = data[index].name.first       
         imagen.src = data[index].picture.large
         imagen.alt = data[index].name.first
-        imagen.className = data[index].name.first
+        imagen.className = "imgRamdomUser"
         clickImage.href = data[index].picture.large
         clickImage.id = data[index].name.first
         
@@ -96,6 +97,7 @@ function createPhoto(data, numCall= 0) {
  */
 photos.addEventListener('click', selectImage, false);
 returnButton.addEventListener('click',redirectHome, false )
+navHome.addEventListener('click',returnButton,false)
 
 /**
  * Event to display an specific person
