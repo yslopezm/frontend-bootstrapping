@@ -14,6 +14,16 @@
       crossorigin="anonymous">
 </head>
 
+<!-- <script>
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+        apiKey: "AIzaSyAqU6EaHpwApqcHlkMBoZEPcesJwp4B-Sg",
+        authDomain: "frontend-bootstrapping.firebaseapp.com",
+        databaseURL: "https://<DATABASE_NAME>.firebaseio.com"
+    };
+    firebase.initializeApp(config);
+</script> -->
+
 <body>
         <div class="background gradient">
                 <ul class="bg-bubbles">
@@ -283,7 +293,8 @@
         </section>
         <section class="contact-form">
             <h3 class="title">Contact Form</h3>
-            <form action="mailto:yenylopezmendoza@outlook.es" method="post">
+            
+            <form id="contactForm" action="mailto:yenylopezmendoza@outlook.es" method="post">
                 <div class="double-line">
                     <div>
                         <input type="text" placeholder="Full Name" id="name" name="name" required>
@@ -295,13 +306,20 @@
                 <div>
                     <textarea name="message" placeholder="Your Message" id="message" cols="30" rows="10" required></textarea>
                 </div>
-                <button>SEND MESSAGE <i class="fas fa-arrow-right"></i></button>
+                <div id="alert" class="alert">Your message have been sent</div>
+                <button id="contactButton" type="submit">SEND MESSAGE <i class="fas fa-arrow-right"></i></button>
             </form>
         </section>
   
     </div>
   </main> 
 </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
   <script src="script.js" type="application/javascript"></script>
+
 </body>
+
+
 </html>

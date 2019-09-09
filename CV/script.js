@@ -21,13 +21,26 @@
 // })
 
 
+let firebaseConfig = {
+    apiKey: "AIzaSyAqU6EaHpwApqcHlkMBoZEPcesJwp4B-Sg",
+    authDomain: "frontend-bootstrapping.firebaseapp.com",
+    databaseURL: "https://frontend-bootstrapping.firebaseio.com",
+    projectId: "frontend-bootstrapping",
+    storageBucket: "frontend-bootstrapping.appspot.com",
+};
+
+firebase.initializeApp(firebaseConfig);
+
+//Reference messages collections 
+let messagesRef = firebase.database().ref("contact");
+
 
 let about = document.getElementById("about");
 let getAbout = document.getElementById("getAbout");
 let resume = document.getElementById("resume");
 let getResume = document.getElementById("getResume");
 let blog = document.getElementById("interest")
-let getBlog = document.getElementById("getInterest");
+let getInterest = document.getElementById("getInterest");
 let contact = document.getElementById("contact");
 let getContact = document.getElementById("getContact");
 
@@ -37,7 +50,7 @@ function remove() {
     resume.classList.remove('view');
     getResume.classList.remove('selected');
     blog.classList.remove('view');
-    getBlog.classList.remove('selected');
+    getInterest.classList.remove('selected');
     contact.classList.remove('view');
     getContact.classList.remove('selected');
 }
@@ -59,12 +72,12 @@ getResume.addEventListener('click', function (e) {
         getResume.classList.add('selected');
     }
 })
-getBlog.addEventListener('click', function (e) {
+getInterest.addEventListener('click', function (e) {
     if (window.innerWidth > 1040) {
         e.preventDefault();
         remove();
         blog.classList.add('view');
-        getBlog.classList.add('selected');
+        getInterest.classList.add('selected');
     }
 })
 getContact.addEventListener('click', function (e) {
@@ -78,20 +91,55 @@ getContact.addEventListener('click', function (e) {
 })
 
 var email = document.getElementById("email");
-var form = document.getElementById("form");
+var form = document.getElementById("contactForm");
+let contactButton = document.getElementById("contactButton")
 
 email.addEventListener("input", function (event) {
   if (email.validity.typeMismatch) {
-    email.setCustomValidity("I expect an e-mail, darling!");
+    email.setCustomValidity("An e-mail was expect");
   } else {
     email.setCustomValidity("");
   }
 });
 
-// form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//   });
 
+form.addEventListener("submit", formFunction);
+
+
+function formFunction(event) {
+    event.preventDefault();    
+    let name = getInputValue("name");    
+    let email = getInputValue("email");
+    let message = getInputValue("message");    
+    
+    //save data in the db
+    saveMessage(name, email, message);
+    // display a message for three seconds 
+    document.querySelector("#alert").style.display = "block";
+    setTimeout(function(){
+        document.querySelector("#alert").style.display = "none";
+    },3000)
+
+    //Detects when the DB has been updated 
+    // firebase.firestore().collection("contact").add({name, email})
+    // .then(r => {
+    //     console.log(r);
+    // });
+}
+
+function getInputValue(id){
+    return document.getElementById(id).value;
+}
+
+//save the messages in firesabe 
+function saveMessage(name, email, message){
+    let newMessageRef = messagesRef.push();
+    newMessageRef.set({
+        name:name,
+        email:email,
+        message,message
+    })
+};
 
 let imagesContent = document.querySelector("#interest-content")
 let imageModal = document.querySelector("#imageModal")
